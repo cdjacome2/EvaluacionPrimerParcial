@@ -1,17 +1,20 @@
-// Componente Contenedor
 class MyContainer extends HTMLElement {
     constructor() {
-    super();
-    // Crear Shadow DOM
-    this.attachShadow({ mode: 'open' });
-    // Definir la estructura del componente contenedor con slots
-    this.shadowRoot.innerHTML = `
-    <div>
-    <slot name="header"></slot>
-    <slot name="content"></slot>
-    </div>
-    `;
+      super();
+      this.attachShadow({ mode: 'open' });
+      this.shadowRoot.innerHTML = `
+        <style>
+          div {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+          }
+        </style>
+        <div>
+          <slot name="header"></slot>
+          <slot name="content"></slot>
+        </div>
+      `;
     }
-    }
-    // Registrar el componente contenedor
-    customElements.define('contenedor-component', MyContainer);
+}
+customElements.define('contenedor-component', MyContainer);

@@ -1,24 +1,27 @@
-// Componente de Contenido
 class MyContent extends HTMLElement {
     constructor() {
         super();
-        // Crear Shadow DOM
         this.attachShadow({ mode: 'open' });
-        // Definir la estructura del componente de contenido
         this.shadowRoot.innerHTML = `
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-            <section>
+          <style>
+            section {
+              padding: 20px;
+            }
+            .list-group {
+              width: 100%;
+            }
+          </style>
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+          <section>
             <br>
-                <ul class="list-group">
-                    <li class="list-group-item">Lista</li>
-                    <li class="list-group-item">Nombres: Jacome Carol, Oviedo Steven</li>
-                    <li class="list-group-item">NRC: 14386</li>
-                    <li class="list-group-item">Fecha: 28/11/2023</li>
-                </ul>
-                <br>
-            </section>
+            <ul class="list-group">
+              <li class="list-group-item">Nombres: Jacome Sanmartin Carol Dayanara</li>
+              <li class="list-group-item">NRC: 14386</li>
+              <li class="list-group-item">Fecha: 14 de Diciembre de 2023</li>
+            </ul>
+            <br>
+          </section>
         `;
     }
-    }
-    // Registrar el componente de contenido
-    customElements.define('my-content', MyContent);
+}
+customElements.define('my-content', MyContent);
